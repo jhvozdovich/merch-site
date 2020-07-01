@@ -1,6 +1,6 @@
-# **Merch Site**
+# **Magic Sword - Merch Site**
 
-#### Author: **Jessica Hvozdovich and Daniel Merys**
+#### Authors: **Jessica Hvozdovich and Daniel Merys**
 #### July 1, 2020
 
 ### Description
@@ -21,7 +21,7 @@ cd merch-site
 ```
 code .
 ```
-5. Download node and node package manager if they are not already installed on your device. You can find further instructions [here](https://www.learnhowtoprogram.com/intermediate-javascript/getting-started-with-javascript-8d3b52cf-3755-481d-80c5-46f1d3a8ffeb/installing-node-js-14f2721a-61e0-44b3-af1f-73f17348c8f4).
+4. Download node and node package manager if they are not already installed on your device. You can find further instructions [here](https://www.learnhowtoprogram.com/intermediate-javascript/getting-started-with-javascript-8d3b52cf-3755-481d-80c5-46f1d3a8ffeb/installing-node-js-14f2721a-61e0-44b3-af1f-73f17348c8f4).
 5. Run npm install in your terminal to download the necessary dependencies, plugins, and modules.
 ```
 npm install
@@ -52,9 +52,11 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
 | **User can view hard coded items on static site** | User Input:"localhost:3000" | Output: “Item List is displayed" |
-| **User can add items to the store via a form** | User Input:"Add item" | Output: “Item form displayed" |
+| **User can access an item form form** | User Input:"Add item" | Output: “Item form displayed" |
+| **User can add items to the store via a form** | User Input:"name: Hoodie, description: Fuzzy and cute quantity: 10, Click: Add item" | Output: “Item List: Hoodie" |
 | **User can decrement item quantity with 'buy"** | User Input:"Hoodie Stock: 2, Click: Buy" | Output: “Hoodie Stock: 1" |
-| **User cannot reduce a quantity below 0 when it it "out of stock** | User Input:"localhost:3000" | Output: “Ticket List is displayed" |
+| **User cannot reduce a quantity below 0 when it it "out of stock** | User Input:"Hoodie Stock: "Out of stock", Click: Buy" | Output: “Sorry, this item is not available!" |
+| **User can increase item quantity with 'restock"** | User Input:"Hoodie Stock: 2, Click: Restock" | Output: “Hoodie Stock: 7" |
 
 ![Diagram of React views](public/MerchSiteDiagram.jpg)
 

@@ -101,6 +101,30 @@ class ItemControl extends React.Component {
     });
   }
 
+  handleBuyingItem = (id) => {
+    const purchasedItem = this.state.itemList.filter(item => item.id === id)[0];
+    purchasedItem.quantity -= 1;
+    const editedItemList = this.state.itemList
+                            .filter(item => item.id !== this.state.selectedItem.id)
+                            .concat(purchasedItem);
+    this.setState({
+      itemList: editedItemList
+    });
+  }
+
+  handleRestockingItem = (id) => {
+    const restockedItem = this.state.itemList.filter(item => item.id === id)[0];
+    restockedItem.quantity += 1;
+    const editedItemList = this.state.itemList
+                            .filter(item => item.id !== this.state.selectedItem.id)
+                            .concat(restockedItem);
+    this.setState({
+      itemList: editedItemList
+    });
+  }
+
+
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -114,7 +138,9 @@ class ItemControl extends React.Component {
       currentlyVisibleState = <ItemDetail
                               item = {this.state.selectedItem}
                               onClickingDelete = {this.handleDeletingItem} 
-                              onClickingEdit = {this.handleEditClick} />
+                              onClickingEdit = {this.handleEditClick} 
+                              onClickingBuy = {this.handleBuyingItem}
+                              onClickingRestock = {this.handleRestockingItem}/>
       buttonText = "Return To Item List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewItemForm 

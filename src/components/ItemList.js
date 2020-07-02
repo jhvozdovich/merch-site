@@ -6,20 +6,24 @@ function ItemList(props) {
   console.log(props.itemList);
   return (
     <React.Fragment>
-      {props.itemList.map((item, index) =>
-        <Item path={item.path}
+      {props.itemList.map((item) =>
+        <Item 
+        whenItemClicked = {props.onItemSelection}
+        path={item.path}
         name={item.name}
         description={item.description}
         price={item.price}
         quantity={item.quantity}
-        key={index} />
+        id={item.id}
+        key={item.id} />
         )}
     </React.Fragment>
   );
 }
 
 ItemList.propTypes = {
-  itemList: PropTypes.array
+  itemList: PropTypes.array,
+  onItemSelection: PropTypes.func
 }
 
 export default ItemList;

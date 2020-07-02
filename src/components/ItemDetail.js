@@ -11,6 +11,7 @@ function ItemDetail(props){
       <h3>{item.description}</h3>
       <h3>{item.price}</h3>
       <h3>{item.quantity}</h3>
+      <button onClick = { props.onClickingEdit }>Update Item</button>
       <button onClick = {() => onClickingDelete(item.id)}>Delete Item</button>
       <hr/>
     </React.Fragment>
@@ -19,7 +20,8 @@ function ItemDetail(props){
 
 ItemDetail.propTypes = {
   item: PropTypes.object,
-  onClickingDelete: PropTypes.func
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
 
 export default ItemDetail;

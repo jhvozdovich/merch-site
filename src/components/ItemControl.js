@@ -2,6 +2,7 @@ import React from 'react';
 import NewItemForm from './NewItemForm';
 import ItemList from './ItemList';
 import ItemDetail from './ItemDetail';
+import EditItemForm from "./EditItemForm";
 import Shirt from "../img/Shirt.png";
 import Hoodie from "../img/Hoodie.jpg";
 import Socks from "../img/Socks.jpeg";
@@ -14,6 +15,7 @@ class ItemControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       selectedItem: null,
+      editing: false,
       itemList: [
         {
           path: Shirt,
@@ -55,7 +57,8 @@ class ItemControl extends React.Component {
     if (this.state.selectedItem != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedItem: null
+        selectedItem: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
@@ -83,14 +86,36 @@ class ItemControl extends React.Component {
     });
   }
 
+  handleEditClick = () => {
+    console.log("EDIT CLICK WOW");
+    this.setState({editing: true});
+  }
+
+  handleEditingItemInList = (itemToEdit) => {
+    const editedItemList = this.state.itemList
+                            .filter(item => item.id !== this.state.selectedItem.id)
+                            .concat(itemToEdit);
+    this.setState({
+      itemList: editedItemList,
+      editing: false,
+      selectedItem: null
+    });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.selectedItem !== null) {
+    if (this.state.editing) {
+      currentlyVisibleState = <EditItemForm 
+                              item = {this.state.selectedItem} 
+                              onEditItem = {this.handleEditingItemInList} />
+      buttonText = "Return To Item List";
+    } else if (this.state.selectedItem !== null) {
       currentlyVisibleState = <ItemDetail
                               item = {this.state.selectedItem}
-                              onClickingDelete = {this.handleDeletingItem} />
+                              onClickingDelete = {this.handleDeletingItem} 
+                              onClickingEdit = {this.handleEditClick} />
       buttonText = "Return To Item List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewItemForm 

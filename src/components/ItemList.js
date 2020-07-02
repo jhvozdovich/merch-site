@@ -3,7 +3,6 @@ import Item from "./Item";
 import PropTypes from "prop-types";
 
 function ItemList(props) {
-  console.log(props.itemList);
   return (
     <React.Fragment>
       {props.itemList.map((item) =>

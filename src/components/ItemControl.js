@@ -87,7 +87,6 @@ class ItemControl extends React.Component {
   }
 
   handleEditClick = () => {
-    console.log("EDIT CLICK WOW");
     this.setState({editing: true});
   }
 

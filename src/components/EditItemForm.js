@@ -7,7 +7,29 @@ function EditItemForm (props) {
 
   function handleEditItemFormSubmission(event) {
     event.preventDefault();
-    props.onEditItem({name: event.target.name.value, description: event.target.description.value, price: event.target.price.value, quantity: event.target.quantity.value, id: item.id});
+    if (event.target.name.value === "") {
+      event.target.name.value = item.name;
+    }
+    if (event.target.description.value === "") {
+      event.target.description.value = item.description;
+    }
+    if (event.target.price.value === "") {
+      event.target.price.value = item.price;
+    }
+    if (event.target.quantity.value === "") {
+      event.target.quantity.value = item.quantity;
+    }
+    if (event.target.path.value === "") {
+      event.target.path.value = item.path;
+    }
+    props.onEditItem({
+        name: event.target.name.value,
+        description: event.target.description.value,
+        price: event.target.price.value,
+        quantity: parseInt(event.target.quantity.value),
+        path: event.target.path.value,
+        id: item.id
+      });
   }
 
   return (

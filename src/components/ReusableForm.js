@@ -25,11 +25,11 @@ function ReusableForm(props) {
           name="quantity"
           placeholder="Item Quantity"/>
         <br />
-        {/* <input
+        <input
           type="text"
           name="path"
           placeholder="Image URL"/>
-        <br /> */}
+        <br />
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>

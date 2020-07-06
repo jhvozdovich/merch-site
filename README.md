@@ -1,11 +1,12 @@
 # **Magic Sword - Merch Site**
 
 #### Authors: **Jessica Hvozdovich and Daniel Merys**
-#### July 1, 2020
+#### Version 2 Contributions by Josh Hellman
+#### July 6, 2020
 
 ### Description
 
-_This application serves as an introduction to React with create-react-app, components, JSX, and props while building a site with CRUD functionality. The merch site will display available items with their name, description, and quantity. A form is available to add new items. Quantities can be updated with "buy" and "restock" buttons._
+_This application serves as an introduction to React with create-react-app, components, JSX, and props while building a site with CRUD functionality. The merch site will display available items with their name, description, and quantity. A form is available to add new items. Quantities can be updated with "buy" and "restock" buttons. Refactored to include Redux._
 
 ### Instructions for use:
 
@@ -44,6 +45,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 
 * JavaScript
 * React
+* Redux
 * JSX
 * HTML
 * Git and GitHub
@@ -64,4 +66,4 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 
 This software is licensed under the MIT license.
 
-Copyright © 2020 **_Jessica Hvozdovich and Daniel Merys_**
+Copyright © 2020 **_Jessica Hvozdovich, Daniel Merys, and  Josh Hellman_**
